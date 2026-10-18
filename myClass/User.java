@@ -1,10 +1,10 @@
 package myClass;
 
 /**
- * User 클래스의 설명을 작성하세요.
+ * User: 도서관 이용자 객체 나타내는 클래스. DB_Element를 상속받고stID를 고유번호로 사용함.
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author 20253----- 박현서
+ * @version (2026.10.18)
  */
 public class User extends DB_Element
 {
@@ -12,7 +12,8 @@ public class User extends DB_Element
     private Integer stID;
 
     /**
-     * User 클래스의 객체 생성자
+     * User 클래스의 객체 생성자. 이용자 정보를 저장함.
+     * 
      */
     public User(int stID, String name)
     {
