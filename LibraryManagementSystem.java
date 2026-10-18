@@ -1,11 +1,12 @@
 import java.util.*;
 import myClass.*;
 import DataBase.LibDB;
+import java.io.*;
 
 /**
  * 도서관 관리 시스템에서 수행하게 되는 처리 작업을 정의한 클래스. 이용자 DB, 책 DB, 대출 DB를 가지고 파일 입력과 대출, 출력 작업 수행.
  *
- * @author 2025957111 김가희, 20253----- 오수아
+ * @author 2025957111 김가희, 20253320028 오수아
  * @version (2025.10.18)
  */
 public class LibraryManagementSystem
@@ -22,26 +23,7 @@ public class LibraryManagementSystem
         bookDB=new LibDB<Book>();
         loanDB=new HashMap<User,Book>();
     }
-    /**
-     * 이용자 파일에서 데이터를 읽어서 이용자 DB를 생성.
-     *
-     * @param  userFile: 이용자 데이터 파일 경로
-     * @return    이용자DB
-     */
-    public LibDB<User> setUserDB(String userFile)
-    {
-        return null;
-    }
-     /**
-     * 책 파일에서 데이터를 읽어 책DB를 만듦.
-     *
-     * @param  bookFile: 책 데이터 파일 경로
-     * @return     책DB
-     */
-    public LibDB<Book> setBookDB(String bookFile)
-    {
-        return null;
-    }
+    
     /**
      * 이용자와 책을 각각 DB에서 찾아서 대출DB에 등록. 이용자나 책을 찾지 못하면 등록하지 않음.
      *
@@ -57,6 +39,7 @@ public class LibraryManagementSystem
             loanDB.put(user, book);
         }
     }
+
     /**
      * 책DB 또는 이용자DB에 저장된 모든 요소를 출력.
      * 
@@ -66,9 +49,10 @@ public class LibraryManagementSystem
     {
         db.printAllElements();
     }
+
     /**
      * 대출DB에 저장된 대출 현황(이용자 ---> 대출한 책)을 출력.
-    */
+     */
     public void printLoanList()
     {
         System.out.println("----- 대출 현황 -----");
@@ -80,5 +64,72 @@ public class LibraryManagementSystem
             System.out.println(user + " ---> " + loanDB.get(user));
         }
         System.out.println("--------------------");
+    }
+
+    /**
+     * 책 파일을 읽어 bookDB에 저장한다. 
+     *
+     * @param  bookFile : 책 데이터가 저장된 파일
+     * @return    bookDB : 책 객체가 저장된 DB
+     */
+    public LibDB<Book> setBookDB(String bookFile)
+    {
+        Scanner sc=null;
+        try{
+            File file = new File(bookFile);
+            FileReader fin=new FileReader(file);
+
+            sc = new Scanner(fin);
+
+            while(sc.hasNextLine()){
+                StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
+                
+                String bookCode = st.nextToken();
+                String bookName = st.nextToken();
+                String name = st.nextToken();
+                String title = st.nextToken();
+                int year = Integer.parseInt(st.nextToken());
+
+                Book book = new Book(bookCode,bookName,name,title,year);
+                bookDB.addElement(book);
+            }
+            sc.close();
+        }
+        catch(IOException e){
+            System.out.println("입출력 오류");
+        }
+        return bookDB;
+    }
+
+    /**
+     * 이용자 파일을 읽어 userDB에 저장한다. 
+     *
+     * @param   userFile : 이용자 데이터가 저장된 파일
+     * @return    userDB : 이용자 객체가 저장된 DB
+     */
+    public LibDB<User> setUserDB(String userFile)
+    {
+        Scanner sc=null;
+        try{
+            File file = new File(userFile);
+            FileReader fin=new FileReader(file);
+
+            sc = new Scanner(fin);
+
+            while(sc.hasNextLine()){
+                StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
+
+                int id = Integer.parseInt(st.nextToken());
+                String name= st.nextToken();
+
+                User user = new User(id,name);
+                userDB.addElement(user);
+            }
+            sc.close();
+        }
+        catch(IOException e){
+            System.out.println("입출력 오류");
+        }
+        return userDB;
     }
 }
