@@ -1,10 +1,10 @@
 package myClass;
 
 /**
- * Book 클래스의 설명을 작성하세요.
+ * Book 책 객체를 나타내는 클래스
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2025320012 박현서)
+ * @version (2026.10.15)
  */
 public class Book extends DB_Element
 {
@@ -16,6 +16,11 @@ public class Book extends DB_Element
 
     /**
      * Book 클래스의 객체 생성자
+     * @param  bookID 등록번호
+     * @param  title 책 제몬
+     * @param  author 저자명
+     * @param  publisher 출판사명
+     * @param  year 출판년도
      */
     public Book(String bookID, String title, String author, String publisher, int year)
     {
@@ -27,10 +32,8 @@ public class Book extends DB_Element
     }
 
     /**
-     * 예제 메소드 - 이 주석을 사용자에 맞게 바꾸십시오
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
+     * 등록번호 반환
+     * @return    등록번호
      */
     public String getID()
     {
@@ -38,10 +41,8 @@ public class Book extends DB_Element
     }
 
     /**
-     * 메소드 예제 - 사용자에 맞게 주석을 바꾸십시오.
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 와 y의 합
+     * 책 정보를 "(등록번호) 제목, 저자, 출판사, 출판년도" 형식의 문자열로 반환
+     * @return    책 정보 문자열
      */
     public String toString()
     {
