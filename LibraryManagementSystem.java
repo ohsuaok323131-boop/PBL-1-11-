@@ -5,7 +5,7 @@ import DataBase.LibDB;
 /**
  * 도서관 관리 시스템에서 수행하게 되는 처리 작업을 정의한 클래스. 이용자 DB, 책 DB, 대출 DB를 가지고 파일 입력과 대출, 출력 작업 수행.
  *
- * @author 2025957111 김가희, 20253----- 오수아
+ * @author (2025957111 김가희, 20253----- 오수아)
  * @version (2025.10.18)
  */
 public class LibraryManagementSystem
@@ -67,7 +67,7 @@ public class LibraryManagementSystem
         db.printAllElements();
     }
     /**
-     * 대출DB에 저장된 대출 현황(이용자 ---> 대출한 책)을 출력.
+     * 대출DB에 저장된 대출 현황(이용자 ===> 대출한 책)을 출력.
     */
     public void printLoanList()
     {
@@ -77,7 +77,7 @@ public class LibraryManagementSystem
         while (it.hasNext())
         {
             User user = it.next();
-            System.out.println(user + " ---> " + loanDB.get(user));
+            System.out.println(user + " ===> " + loanDB.get(user));
         }
         System.out.println("--------------------");
     }

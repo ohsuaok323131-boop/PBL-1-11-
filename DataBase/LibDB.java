@@ -3,10 +3,10 @@ import java.util.*;
 import myClass.DB_Element;
 
 /**
- * LibDB 클래스의 설명을 작성하세요.
+ * LibDB: 책DB, 이용자DB 모두를 표현하는 클래스
  *
- * @author (작성자 이름)
- * @version (버전 번호 또는 작성한 날짜)
+ * @author (2025320012 박현서)
+ * @version (2026.10.15)
  */
 public class LibDB<T extends DB_Element>
 {
@@ -21,10 +21,9 @@ public class LibDB<T extends DB_Element>
     }
 
     /**
-     * 메소드 예제 - 사용자에 맞게 주석을 바꾸십시오.
+     * DB에 요소 1개 추가
      *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 와 y의 합
+     * @param  element  추가할 요소
      */
     public void addElement(T element)
     {
@@ -32,10 +31,9 @@ public class LibDB<T extends DB_Element>
     }
 
     /**
-     * 예제 메소드 - 이 주석을 사용자에 맞게 바꾸십시오
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
+     * ID로 DB에 저장된 요소 검색
+     * @param  id  찾을 요소의 ID
+     * @return    찾은 요소, 없으면 null
      */
     public T findElement(String id)
     {
@@ -50,10 +48,7 @@ public class LibDB<T extends DB_Element>
     }
 
     /**
-     * 메소드 예제 - 사용자에 맞게 주석을 바꾸십시오.
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 와 y의 합
+     * DB에 저장된 모든 요소 출력
      */
     public void printAllElements()
     {
