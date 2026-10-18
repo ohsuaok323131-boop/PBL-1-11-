@@ -6,7 +6,7 @@ import java.io.*;
 /**
  * 도서관 관리 시스템에서 수행하게 되는 처리 작업을 정의한 클래스. 이용자 DB, 책 DB, 대출 DB를 가지고 파일 입력과 대출, 출력 작업 수행.
  *
- * @author (2025957111 김가희, 20253320028 오수아)
+ * @author (2025957111 김가희, 2025320028 오수아)
  * @version (2025.10.18)
  */
 public class LibraryManagementSystem
