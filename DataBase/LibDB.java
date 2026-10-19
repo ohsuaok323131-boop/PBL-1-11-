@@ -6,7 +6,7 @@ import myClass.DB_Element;
  * LibDB: 책DB, 이용자DB 모두를 표현하는 클래스
  *
  * @author (2025320012 박현서)
- * @version (2026.10.15)
+ * @version (최종 수정 - 2026.10.19)
  */
 public class LibDB<T extends DB_Element>
 {
@@ -31,7 +31,7 @@ public class LibDB<T extends DB_Element>
     }
 
     /**
-     * ID로 DB에 저장된 요소 검색
+     * id로 데이터베이스에 저장된 요소 검색
      * @param  id  찾을 요소의 ID
      * @return    찾은 요소, 없으면 null
      */
@@ -48,7 +48,7 @@ public class LibDB<T extends DB_Element>
     }
 
     /**
-     * DB에 저장된 모든 요소 출력
+     * 데이터베이스에 저장된 모든 요소 출력
      */
     public void printAllElements()
     {

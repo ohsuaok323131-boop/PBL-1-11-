@@ -3,13 +3,13 @@ package myClass;
 /**
  * User: 도서관 이용자 객체 나타내는 클래스. DB_Element를 상속받고stID를 고유번호로 사용함.
  *
- * @author (2025320012박현서)
+ * @author (2025320012 박현서)
  * @version (2026.10.18)
  */
 public class User extends DB_Element
 {
-    private String name;
-    private Integer stID;
+    private String name;     // 이용자 이름
+    private Integer stID;    // 학번
 
     /**
      * User 클래스의 객체 생성자. 이용자 정보를 저장함.

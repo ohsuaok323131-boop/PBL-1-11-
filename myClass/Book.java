@@ -8,11 +8,11 @@ package myClass;
  */
 public class Book extends DB_Element
 {
-    private String bookID;
-    private String title;
-    private String author;
-    private String publisher;
-    private int year;
+    private String bookID;      // 등록번호
+    private String title;       // 책 제목
+    private String author;      // 저자명
+    private String publisher;   // 출판사명
+    private int year;           // 출판년도
 
     /**
      * Book 클래스의 객체 생성자
