@@ -50,7 +50,7 @@ public class LibraryManagementSystem
     }
     
     /**
-     * 대출DB에 저장된 대출 현황(이용자 ---> 대출한 책)을 출력.
+     * 대출DB에 저장된 대출 현황(이용자 ===> 대출한 책)을 출력.
      */
     public void printLoanList()
     {
