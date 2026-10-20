@@ -82,13 +82,13 @@ public class LibraryManagementSystem
             while(sc.hasNextLine()){
                 StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
 
-                String bookCode = st.nextToken();
-                String bookName = st.nextToken();
-                String name = st.nextToken();
+                String bookID = st.nextToken();
                 String title = st.nextToken();
+                String author = st.nextToken();
+                String publisher = st.nextToken();
                 int year = Integer.parseInt(st.nextToken());
 
-                Book book = new Book(bookCode,bookName,name,title,year);
+                Book book = new Book(bookID,title,author,publisher,year);
                 bookDB.addElement(book);
             }
             sc.close();
@@ -116,10 +116,10 @@ public class LibraryManagementSystem
             while(sc.hasNextLine()){
                 StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
 
-                int id = Integer.parseInt(st.nextToken());
+                int stID = Integer.parseInt(st.nextToken());
                 String name= st.nextToken();
 
-                User user = new User(id,name);
+                User user = new User(stID,name);
                 userDB.addElement(user);
             }
             sc.close();
