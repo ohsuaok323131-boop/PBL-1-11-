@@ -73,12 +73,11 @@ public class LibraryManagementSystem
      */
     public LibDB<Book> setBookDB(String bookFile)
     {
-        Scanner sc=null;
         try{
             File file = new File(bookFile);
             FileReader fin=new FileReader(file);
 
-            sc = new Scanner(fin);
+            Scanner sc = new Scanner(fin);
 
             while(sc.hasNextLine()){
                 StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
@@ -108,12 +107,11 @@ public class LibraryManagementSystem
      */
     public LibDB<User> setUserDB(String userFile)
     {
-        Scanner sc=null;
         try{
             File file = new File(userFile);
             FileReader fin=new FileReader(file);
 
-            sc = new Scanner(fin);
+            Scanner sc = new Scanner(fin);
 
             while(sc.hasNextLine()){
                 StringTokenizer st = new StringTokenizer(sc.nextLine(),"/");
